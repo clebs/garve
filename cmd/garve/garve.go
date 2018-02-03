@@ -30,7 +30,7 @@ func init() {
 
 // main is the entry point of the garve cmd.
 func main() {
-	url := fmt.Sprintf("http://localhost:%s/add", os.Getenv("Port"))
+	url := fmt.Sprintf("%s://%s:%s/add", os.Getenv("Protocol"), os.Getenv("Host"), os.Getenv("Port"))
 
 	m := comms.Message(message)
 	json, err := json.Marshal(m)
